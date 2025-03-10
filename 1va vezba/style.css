@@ -1,0 +1,338 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+  }
+  .main{
+    position: relative;
+    width: 80%;
+    float: right;
+    color: white;
+  }
+  
+  body{
+    margin: 0;
+  }
+  
+  .Welcome{
+      background-color: rgba(94,66,166,255);
+      padding: 25% 5%;
+      h1{
+        font-size: 3rem;
+        padding-bottom: 3%;
+      }
+      p{
+        font-size: 1rem;
+      }
+  }
+  .WhoWeAre__block1{
+      display: flex;
+      background-color: rgba(80,82,181,255);
+  }
+  .WhoWeAre__block2{
+      display: flex;
+      background-color: rgba(76,78,172,255);
+  }
+  .WhoWeAre__block3{
+      display: flex;
+      background-color: rgba(72,74,163,255);
+  }
+  .image-container img{
+    height: 100%;
+  }
+  .R-Block{
+    padding: 5% 7%;
+    width: 100%;
+    h2{
+      padding-bottom: 2%;
+    }
+  }
+  .WhatWeDo{
+      background-color: rgba(183,78,145,255);
+      padding: 5%;
+      p{
+        padding: 2% 0;
+      }
+  }
+  .WhatWeDo__table{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .WhatWeDo__item{
+    flex: 0 0 50%;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(195,108,163,255);
+    background-color: rgba(187,87,151,255);
+    padding: 35px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    p{
+      padding-left: 12%;
+    }
+  }
+  .icons{
+    display: flex;
+    i{
+      padding-right: 5%;
+    }
+  }
+  .GetInTouch{
+    background-color: rgba(94,66,166,255);
+    padding: 5%;
+    p{
+      padding: 2% 0;
+      color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  .info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    form{
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+    button{
+      width: 150px;
+    }
+  }
+  .info-container{
+    padding: 0 5% ;
+    border-left: solid;
+    border-width: thin;
+    border-color: rgba(108,83,173,255);
+    a{
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.2);
+      padding-right: 3%;
+    }
+    address{
+      color: rgba(255, 255, 255, 0.2);
+    }
+    h4{
+      padding: 15px 0px;
+    }
+  }
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+  }
+  button{
+    background-color: Transparent;
+    padding: 10px 25px;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 24px;
+    border-style: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+  .social{
+    color: white;
+  }
+  .name_email{
+    display:flex;
+    justify-content: space-between;
+  }
+  footer{
+    background-color: rgba(73,51,130,255);
+    padding: 5%;
+    font-size: 0.8em;
+    color: #5e42a6
+  }
+  @media(max-width: 449.98px) {
+    .main {
+      width: 100vw;
+      float: none;
+    }
+    .sidenav {
+      position: relative;
+      width: 100%;
+      height: auto;
+      background: rgb(54, 39, 83);
+    }
+    .nav {
+      position: static;
+      margin: 0;
+      text-align: center;
+      top: 0;
+      transform: none;
+      padding: 15px 0;
+    }
+    
+    .nav ul {
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .nav ul li {
+      margin: 0.5em;
+    }
+    
+    .nav ul li a {
+      line-height: normal;
+      padding: 10px;
+      font-size: 0.8em;
+      border-bottom: none;
+    }
+    .WhoWeAre__block1,
+    .WhoWeAre__block2,
+    .WhoWeAre__block3 {
+      flex-direction: column;
+      width:100%;
+    }
+    .image-container{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+    .R-Block {
+      padding: 5% 8%;
+    }
+    .WhatWeDo__table{
+      display: flex;
+      flex-direction: column;
+    }
+    .WhatWeDo__item {
+      flex: 0 0 100%;
+    }
+    .icons{
+      flex-direction: column;
+      i{
+        padding-bottom: 2%;
+      }
+    }
+    .info {
+      flex-direction: column;
+    }
+    
+    .info form {
+      width: 100%;
+      padding-left: 0;
+    }
+    .name_email{
+      flex-direction: column;
+    }
+    
+    .info-container {
+      margin-top: 30px;
+      padding: 30px 0 0 0;
+      border-left: none;
+      border-top: solid;
+      border-width: thin;
+      border-color: rgba(108, 83, 173, 255);
+    }
+    .Welcome {
+      padding: 15% 5%;
+    }
+    .Welcome h1 {
+      font-size: 2.5rem;
+    }
+    button{
+      width: 100%;
+    }
+    .info button{
+      width: 100%;
+    }
+  }
+  @media (max-width:1199.98px){
+    .sidenav{
+      background: rgb(54, 39, 83);
+      font-size: 0.60em;
+    }
+    .nav ul{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      li{
+        a{
+          line-height: 5em;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: bold;
+          letter-spacing: 0.4em;
+          color: rgb(139, 139, 139);
+          transition: all ease-out 300ms;
+          padding: 17px 0;
+          margin: 0 25px;
+          border-bottom: 0.3em solid rgba(60,44,97,255);
+        }
+        &:hover a{
+          color: white;
+          border-bottom-color: rgba(168,76,148,255);
+        }
+      }
+    }
+    .main{
+      width: 100%;
+    }
+  }
+  @media (min-width:1200px){
+    .sidenav{
+      position: fixed;
+      width: 20%;
+      background: rgb(54, 39, 83);
+      height: 100vh;
+      font-size: 0.65em;
+    }
+    .nav{
+      position: relative;
+      margin: 0 15%;
+      text-align: right;
+      top: 30%;
+      transform: translateY(-50%);
+      font-weight: bold;
+    }
+    .nav ul {
+      list-style: none;
+      
+      li {
+        position: relative;
+        margin: 3.2em 0;      
+        a {
+          line-height: 5em;
+          text-transform: uppercase;
+          text-decoration: none;
+          letter-spacing: 0.4em;
+          color: rgb(139, 139, 139);
+          display: block;
+          transition: all ease-out 300ms;
+          border-bottom: 0.3em solid rgba(60,44,97,255);
+        }
+          &:hover a{
+            color: white;
+            border-bottom-color: rgba(168,76,148,255);
+          }
+        }
+      }
+    }
+  
