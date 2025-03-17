@@ -3,52 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <title>Face Matching Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container mt-4">
-        <h1 class="game-title text-center">Face matching game</h1>
-        <h4 class="game-subtitle text-center">Match the faces before time runs out!</h4>
+    <div class="container game-container">
+        <h1 class="text-center game-header">Face matching game</h1>
+        <h4 class="text-center mb-4">Match the faces before time runs out!</h4>
         
-        <div class="timer-container d-flex justify-content-center">
-            <div class="card w-50 ">
+        <div class="timer-container">
+            <div class="card">
                 <div class="card-header bg-primary text-white text-center">
                     Time Remaining
                 </div>
                 <div class="card-body text-center">
-                    <h1 id="timer">60</h1>
+                    <h2 id="timer-display">50</h2>
                 </div>
             </div>
         </div>
+        
+        <div id="game-board" class="game-grid grid-normal">
+        </div>
     </div>
-
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#welcomeModal">
-    Launch demo modal
-    </button>
-  
-    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog">
+    
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-body text-center">
-                    <h2 class="mb-4">Welcome to the image matching game!</h2>
-                    <p>Please select what difficulty you would like to play on</p>
-                
-                    <div class="difficulty-buttons">
-                        <button class="btn btn-success">Easy</button>
-                        <button class="btn btn-warning">Normal</button>
-                        <button class="btn btn-danger">Hard</button>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="welcomeModalLabel">Welcome to the image matching game!</h5>
+                </div>
+                <div class="modal-body">
+                    <p class="welcome-msg">Please select what difficulty you would like to play on</p>
+                    <div class="difficulty-btns">
+                        <button type="button" class="btn btn-success" data-difficulty="easy">Easy</button>
+                        <button type="button" class="btn btn-warning" data-difficulty="normal">Normal</button>
+                        <button type="button" class="btn btn-danger" data-difficulty="hard">Hard</button>
                     </div>
-                
-                    <button class="btn btn-primary btn-lg mt-3 w-100" id="beginButton" disabled>Begin</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-100" id="beginBtn">Begin</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="modal fade" id="endGameModal" tabindex="-1" aria-labelledby="endGameModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="endGameModalLabel">Game Over</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="endGameMessage"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-100" id="playAgainBtn">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

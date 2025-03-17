@@ -1,0 +1,124 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.card-container {
+    margin: 8px;
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+    perspective: 1000px; 
+}
+
+.memory-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s; 
+}
+
+.memory-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #dee2e6;
+    overflow: hidden; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-front {
+    background-color: #4dabf7;
+    transform: rotateY(180deg);
+    padding: 8px;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-back {
+    background-color: #ffffff;
+    padding: 8px;
+    border: 1px solid #000; 
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 3px;
+}
+
+.game-header {
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timer-container {
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.welcome-msg {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.difficulty-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 8px;
+}
+
+.grid-easy {
+    max-width: 600px;
+}
+
+.grid-normal {
+    max-width: 900px;
+}
+
+.grid-hard {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(4, 180px);
+    gap: 8px;
+    justify-content: center;
+}
+
+
+.matched .card-front {
+    background-color: #40c057;
+    padding: 8px;
+} 
