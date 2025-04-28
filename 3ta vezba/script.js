@@ -223,17 +223,15 @@ class Calendar {
   renderEvent(event, isWeekView = false) {
     const eventClass = isWeekView ? "week-event" : "event";
     return `
-            <div class="${eventClass}" onclick="event.stopPropagation(); calendar.openModal(new Date(${event.date.getFullYear()}, ${event.date.getMonth()}, ${event.date.getDate()}), ${JSON.stringify(
-      event
-    ).replace(/"/g, "&quot;")})">
-                <div class="event-content">
-                    <span class="event-time">${this.formatEventTime(
-                      event.time
-                    )}</span>
-                    <span class="event-title">${event.title}</span>
-                </div>
-            </div>
-        `;
+      <div class="${eventClass}" onclick="event.stopPropagation(); calendar.openModal(new Date('${
+      event.date
+    }'), ${JSON.stringify(event).replace(/"/g, "&quot;")})">
+        <div class="event-content">
+          <span class="event-time">${this.formatEventTime(event.time)}</span>
+          <span class="event-title">${event.title}</span>
+        </div>
+      </div>
+    `;
   }
 
   renderDayView() {
@@ -257,15 +255,19 @@ class Calendar {
                   return `
                         <div class="hour-block ${
                           isCurrentHour ? "current-hour" : ""
-                        }" onclick="calendar.openModal(new Date(${selectedDate.getFullYear()}, ${selectedDate.getMonth()}, ${selectedDate.getDate()}))">
+                        }" onclick="calendar.openModal(new Date('${selectedDate}'))"
                             <div class="hour-label">${hourString}:00</div>
                             <div class="hour-event">
                                 ${
                                   event
                                     ? `
-                                    <div class="day-event" onclick="event.stopPropagation(); calendar.openModal(new Date(${event.date.getFullYear()}, ${event.date.getMonth()}, ${event.date.getDate()}), ${JSON.stringify(
-                                        event
-                                      ).replace(/"/g, "&quot;")})">
+                                    <div class="day-event" onclick="event.stopPropagation(); calendar.openModal(new Date('${
+                                      event.date
+                                    }'), ${JSON.stringify(event).replace(
+                                        /"/g,
+                                        "&quot;"
+                                      )})"
+
                                         <span class="event-time">${this.formatEventTime(
                                           event.time
                                         )}</span>
@@ -299,7 +301,8 @@ class Calendar {
                     return `
                         <div class="week-day ${
                           isToday ? "current-day" : ""
-                        }" onclick="calendar.openModal(new Date(${date.getFullYear()}, ${date.getMonth()}, ${date.getDate()}))">
+                        }" onclick="calendar.openModal(new Date('${event.date}')
+)">
                             <div class="week-date">
                                 <div class="week-day-name">${date.toLocaleDateString(
                                   "default",
