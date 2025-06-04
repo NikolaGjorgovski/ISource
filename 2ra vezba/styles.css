@@ -1,15 +1,21 @@
 body {
   background-color: #f8f9fa;
   font-family: Arial, sans-serif;
-  padding: 20px;
+  padding: 10px;
+  margin: 0;
 }
 
 .card-container {
-  margin: 8px;
-  width: 180px;
-  height: 180px;
+  margin: 6px;
+  width: 170px;
+  height: 170px;
   cursor: pointer;
   perspective: 1000px;
+  transition: transform 0.2s;
+}
+
+.card-container:hover {
+  transform: scale(1.02);
 }
 
 .memory-card {
@@ -17,7 +23,7 @@ body {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .memory-card.flipped {
@@ -65,18 +71,48 @@ body {
 
 .game-header {
   color: #343a40;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .game-container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px;
 }
 
 .timer-container {
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  max-width: 698px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timer-container .card {
+  border: none;
+  border-radius: 8px;
+}
+
+.timer-container .card-header {
+  padding: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.timer-container .card-body {
+  padding: 15px;
+}
+
+#timer-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0d6efd;
+  margin: 0;
 }
 
 .welcome-msg {
@@ -96,28 +132,33 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 8px;
+  gap: 6px;
+}
+
+#game-board {
+  margin-top: 35px;
 }
 
 .grid-easy {
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .grid-normal {
-  max-width: 900px;
+  max-width: 800px;
 }
 
 .grid-hard {
-  max-width: 800px;
+  max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(4, 180px);
-  gap: 8px;
+  grid-template-columns: repeat(6, 170px);
+  gap: 6px;
   justify-content: center;
 }
 
 .matched .card-front {
   background-color: #40c057;
   padding: 8px;
+  box-shadow: 0 0 10px rgba(64, 192, 87, 0.3);
 }

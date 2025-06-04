@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   let gameConfig = {
-    easy: { rows: 2, cols: 3, pairs: 3, time: 50 },
-    normal: { rows: 3, cols: 4, pairs: 6, time: 50 },
-    hard: { rows: 4, cols: 4, pairs: 8, time: 50 },
+    easy: { rows: 2, cols: 4, pairs: 4, time: 60 },    // 2x4 instead of 2x3
+    normal: { rows: 3, cols: 4, pairs: 6, time: 60 },  // Keep 3x4 
+    hard: { rows: 3, cols: 6, pairs: 9, time: 60 },    // 3x6 instead of 4x4
   };
 
   const cardImages = {
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "images/neymar.jpeg",
       "images/messi.jpeg",
       "images/ronaldo.jpeg",
+      "images/Doue.jpeg",
     ],
     back: "images/back-card.jpeg",
   };
@@ -158,7 +159,14 @@ document.addEventListener("DOMContentLoaded", function () {
       pairs.push(i);
     }
 
-    const shuffledPairs = shuffleArray([...pairs]);
+    // Fill remaining slots with random pairs if needed
+    while (pairs.length < totalCards) {
+      const randomIndex = Math.floor(Math.random() * config.pairs);
+      pairs.push(randomIndex);
+      pairs.push(randomIndex);
+    }
+
+    const shuffledPairs = shuffleArray([...pairs.slice(0, totalCards)]);
 
     for (let i = 0; i < totalCards; i++) {
       const cardContainer = document.createElement("div");
