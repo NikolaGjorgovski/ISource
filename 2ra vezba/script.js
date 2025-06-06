@@ -159,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
       pairs.push(i);
     }
 
-    // Fill remaining slots with random pairs if needed
     while (pairs.length < totalCards) {
       const randomIndex = Math.floor(Math.random() * config.pairs);
       pairs.push(randomIndex);
