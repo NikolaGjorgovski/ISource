@@ -162,3 +162,76 @@ body {
   padding: 8px;
   box-shadow: 0 0 10px rgba(64, 192, 87, 0.3);
 }
+
+@media screen and (max-width: 1366px) {
+  body {
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .card-container {
+    margin: 4px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .game-container {
+    max-width: 1100px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .timer-container {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    max-width: 600px;
+  }
+
+  .timer-container .card-header {
+    padding: 6px;
+  }
+
+  .timer-container .card-body {
+    padding: 8px;
+  }
+
+  #timer-display {
+    font-size: 1.8rem;
+  }
+
+  .game-header {
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+  }
+
+  .game-grid {
+    max-width: 1100px;
+    gap: 4px;
+  }
+
+  #game-board {
+    margin-top: 18px;
+  }
+
+  .grid-easy {
+    max-width: 750px;
+    display: grid;
+    grid-template-columns: repeat(4, 130px);
+    gap: 4px;
+    justify-content: center;
+  }
+
+  .grid-normal {
+    max-width: 750px;
+    display: grid;
+    grid-template-columns: repeat(4, 130px);
+    gap: 4px;
+    justify-content: center;
+  }
+
+  .grid-hard {
+    max-width: 1100px;
+    grid-template-columns: repeat(6, 130px);
+    gap: 4px;
+  }
+}
